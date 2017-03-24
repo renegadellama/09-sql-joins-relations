@@ -32,7 +32,9 @@ app.get('/new', function(request, response) {
 app.get('/articles', function(request, response) {
   // REVIEW: This query will join the data together from our tables
   // TODO: Write a SQL query which joins all data from articles and authors tables on the author_id value of each
-  client.query(``)
+  client.query(`SELECT
+                (join somehow)
+                ON (some other crap here)`)
   .then(function(result) {
     response.send(result.rows);
   })
@@ -42,19 +44,18 @@ app.get('/articles', function(request, response) {
 });
 
 app.post('/articles', function(request, response) {
-  // TODO: Write a SQL query to insert a new author, ON CONFLICT DO NOTHING
-  // TODO: Add author and "authorUrl" as data for the SQL query to interpolate
   client.query(
-    '',
-    []
+  // TODO: Write a SQL query to insert a new ***author***, ON CONFLICT DO NOTHING
+  // TODO: Add author and "authorUrl" as data for the SQL query to interpolate
+    'Thing1',
+    [Thing2]
   )
   .then(function() {
-    // TODO: Write a SQL query to insert a new article, using a sub-query to
-    // retrieve the author_id from the authors table
+    // TODO: Write a SQL query to insert a new ***article***, using a sub-query to retrieve the author_id from the authors table
     // TODO: Add the required values from the request as data for the SQL query to interpolate
     client.query(
-      ``,
-      []
+      `Thing1`,
+      [Thing2]
     )
   })
   .then(function() {
@@ -66,18 +67,18 @@ app.post('/articles', function(request, response) {
 });
 
 app.put('/articles/:id', function(request, response) {
-  // TODO: Write a SQL query to update an author record
-  // TODO: Add the required values from the request as data for the SQL query to interpolate
   client.query(
-    ``,
-    []
+  // TODO: Write a SQL query to update an ***author*** record
+  // TODO: Add the required values from the request as data for the SQL query to interpolate
+    `Thing1`,
+    [Thing2]
   )
   .then(function() {
-    // TODO: Write a SQL query to update an article record
+    // TODO: Write a SQL query to update an **article*** record
     // TODO: Add the required values from the request as data for the SQL query to interpolate
     client.query(
-      ``,
-      []
+      `Thing1`,
+      [Thing2]
     )
   })
   .then(function() {

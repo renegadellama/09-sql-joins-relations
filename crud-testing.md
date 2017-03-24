@@ -33,7 +33,8 @@ In the browser console, inspect `Article.all[0]` and make note of the `author_id
 
 Next, enter this in the console, making sure to put in the correct values you just noted:
 
-```let updatedArticle = new Article({
+```
+let updatedArticle = new Article({
   author_id: ****number from the prior step****,
   article_id: ****number from the prior step****,
   title:'Bob',
@@ -45,7 +46,7 @@ Next, enter this in the console, making sure to put in the correct values you ju
 });
 ```
 
-Next, enter `updatedArticle.updateRecord()` and if there are no errors, refresh the page; the Flibbity Jibbit article will gave been replaced by the Bob article, and you should also be able to see that the filters now have references to Bob instead of the dearly departed Flibbity.
+Next, enter `updatedArticle.updateRecord()` and if there are no errors, refresh the page; the Flibbity Jibbit article will have been replaced by the Bob article, and you should also be able to see that the filters now have references to Bob instead of the dearly departed Flibbity.
 
 ---
 
