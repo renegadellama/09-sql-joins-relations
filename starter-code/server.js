@@ -57,8 +57,10 @@ app.post('/articles', function(request, response) {
     // TODO: Write a SQL query to insert a new ***article***, using a sub-query to retrieve the author_id from the authors table
     // TODO: Add the required values from the request as data for the SQL query to interpolate
     client.query(
-      `INSERT INTO articles(article_id, title, category, "publishedOn", body)
-      VALUE ( (SELECT author_id FROM author WHERE author = $5), $1, $2, $3, $4 );`,
+      `INSERT INTO articles(author_id, title, category, "publishedOn", body)
+      SELECT author_id, $1, $2, $3, $4
+      FROM authors
+      WHERE author=$5;`,
       [request.body.title,
         request.body.category,
         request.body.publishedOn,
@@ -90,7 +92,7 @@ app.put('/articles/:id', function(request, response) {
     client.query(
       `UPDATE articles
       SET title=$1, category=$2, "publishedOn"=$3, body=$4
-    WHERE article_id = $5`,
+    WHERE article_id=$5`,
       [request.body.title,
         request.body.category,
         request.body.publishedOn,
